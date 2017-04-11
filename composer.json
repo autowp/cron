@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Autowp\\ZFComponents\\": "src/"
+            "Autowp\\Cron\\": "src/"
         }
     },
     "require-dev": {
