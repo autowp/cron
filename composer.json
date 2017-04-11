@@ -1,6 +1,6 @@
 {
-    "name": "autowp/zf-components",
-    "description": "ZF Components",
+    "name": "autowp/cron",
+    "description": "Cron",
     "license": "mit",
     "authors": [
         {
