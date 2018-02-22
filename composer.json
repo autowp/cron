@@ -1,7 +1,7 @@
 {
     "name": "autowp/cron",
     "description": "Cron",
-    "license": "mit",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dmitry",
