@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Autowp\Cron;
 
-use Zend\ModuleManager\Feature;
+use Laminas\Loader\StandardAutoloader;
+use Laminas\ModuleManager\Feature;
 
 class Module implements
     Feature\AutoloaderProviderInterface,
@@ -17,14 +20,17 @@ class Module implements
         return [
             'console'         => $provider->getConsoleConfig(),
             'controllers'     => $provider->getControllersConfig(),
-            'service_manager' => $provider->getDependencyConfig()
+            'service_manager' => $provider->getDependencyConfig(),
         ];
     }
 
+    /**
+     * @return array
+     */
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            StandardAutoloader::class => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src',
                 ],

@@ -1,22 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Autowp\Cron;
 
-use Zend\EventManager\Event;
-use Zend\Mvc\ApplicationInterface;
+use Laminas\EventManager\Event;
+use Laminas\Mvc\ApplicationInterface;
 
 class CronEvent extends Event
 {
-    const EVENT_DAILY_MAINTENANCE = 'daily.maintenance';
-    const EVENT_MIDNIGHT = 'midnight';
+    public const EVENT_DAILY_MAINTENANCE = 'daily.maintenance';
+    public const EVENT_MIDNIGHT          = 'midnight';
 
-    protected $application;
+    protected ApplicationInterface $application;
 
     /**
      * Set application instance
      *
-     * @param  ApplicationInterface $application
-     * @return MvcEvent
+     * @return $this
      */
     public function setApplication(ApplicationInterface $application)
     {

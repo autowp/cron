@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Autowp\Cron;
 
 class ConfigProvider
@@ -12,7 +14,7 @@ class ConfigProvider
         return [
             'console'      => $this->getConsoleConfig(),
             'controllers'  => $this->getControllersConfig(),
-            'dependencies' => $this->getDependencyConfig()
+            'dependencies' => $this->getDependencyConfig(),
         ];
     }
 
@@ -29,11 +31,11 @@ class ConfigProvider
                             'route'    => 'cron (daily-maintenance|midnight):action',
                             'defaults' => [
                                 'controller' => CronController::class,
-                            ]
-                        ]
+                            ],
+                        ],
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -45,7 +47,7 @@ class ConfigProvider
         return [
             'factories' => [
                 CronController::class => CronControllerFactory::class,
-            ]
+            ],
         ];
     }
 
@@ -59,7 +61,7 @@ class ConfigProvider
         return [
             'factories' => [
                 'CronEventManager' => CronEventManagerFactory::class,
-            ]
+            ],
         ];
     }
 }

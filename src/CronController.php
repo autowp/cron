@@ -1,28 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Autowp\Cron;
 
-use Zend\EventManager\EventManagerInterface;
-use Zend\Mvc\ApplicationInterface;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\Mvc\ApplicationInterface;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class CronController extends AbstractActionController
 {
-    /**
-     * @var EventManagerInterface
-     */
+    /** @var EventManagerInterface */
     private $eventManager;
 
-    /**
-     * @var ApplicationInterface
-     */
+    /** @var ApplicationInterface */
     private $application;
 
     public function __construct(
         ApplicationInterface $application,
         EventManagerInterface $comments
     ) {
-        $this->application = $application;
+        $this->application  = $application;
         $this->eventManager = $comments;
     }
 
